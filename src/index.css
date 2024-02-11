@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.nav_link {
+  overflow: hidden;
+}
+
+.navLink_active {
+  height: 3px;
+  width: 100%;
+  margin-top: 2px;
+  background-color: #dfde35;
+  transform: translateX(-100%);
+  transition: 0.3s ease-in;
+}
+
+.nav_link:hover .navLink_active {
+  transform: translateX(0%);
+}
+
+.profile_cart_icon:hover i {
+  transition: all 0.3s ease;
+  transform: scale(1.1);
+  color: rgb(237, 237, 119);
+}
+
+.smNavbarLinksHover:hover {
+  color: yellow;
+}
+
+.navbar_cardImg:hover .navbar_cardBtn {
+  background: transparent;
+  display: flex;
+}
+
+/* Comet Carousel */
+
+.comet_carousel_container {
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  cursor: grab;
+  -webkit-user-drag: none;
+}
+
+.comet_carousel_container::-webkit-scrollbar {
+  display: none;
+}
+
+.comet_carousel_container:active {
+  cursor: grabbing;
+}
+
+.comet_carousel_card {
+  border-width: 1px 1px 1px 0;
+  border-style: solid;
+  border-color: black;
+  transition: all 0.5s;
+  scroll-snap-align: start;
+  overflow: hidden;
+}
+
+.comet_carousel_card .carousel_image {
+  -webkit-user-drag: none;
+}
+
+.comet_carousel_card:hover .carousel_image {
+  transform: scale(1.1);
+  transition: all 0.5s;
+}
+
+/* Story Section */
+
+.testimonial_carousel_container {
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  cursor: grab;
+  -webkit-user-drag: none;
+}
+
+.testimonial_carousel_container::-webkit-scrollbar {
+  display: none;
+}
+
+.testimonial_carousel_container:active {
+  cursor: grabbing;
+}
+
+.testimonial_carousel_card .testimonial_card_image {
+  -webkit-user-drag: none;
+}
