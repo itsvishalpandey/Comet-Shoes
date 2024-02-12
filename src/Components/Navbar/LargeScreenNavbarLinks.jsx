@@ -11,7 +11,7 @@ function LargeScreenNavbarLinks() {
 
   const handleNavLink = (name) => {
     setNavLinkClicked((prev) => ({
-      ...prev,
+      ...Object.fromEntries(Object.entries(prev).map(([key]) => [key, false])),
       [name]: !prev[name],
     }));
   };

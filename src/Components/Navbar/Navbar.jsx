@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import SmallScreenNavbarLinks from "./SmallScreenNavbarLinks";
 import LargeScreenNavbarLinks from "./LargeScreenNavbarLinks";
@@ -6,62 +6,31 @@ import Cart from "../../Pages/Cart/Cart";
 import { useSelector } from "react-redux";
 
 function Navbar() {
-  //  **** For small screen menu
   const [menuOpen, setMenuOpen] = useState(false);
+  const [cartOpen, setCartOpen] = useState(false);
+  const [profileOpen, setProfileOpen] = useState(false);
 
   const handleMenu = () => {
-    // Toggle the menu state
     setMenuOpen(!menuOpen);
   };
 
-  //  **** To open cart
-  const [cartOpen, setCartOpen] = useState(false);
-
   const handleCart = () => {
     setCartOpen(!cartOpen);
+    setProfileOpen(false);
   };
 
-  // To open profile
-  const [profileOpen, setProfileOpen] = useState(false);
   const handleProfileIcon = () => {
     setProfileOpen(!profileOpen);
+    setCartOpen(false);
   };
 
-  //   **** For navbar
-  // const [scrollTop, setScrollTop] = useState(0);
-  // const [showNavbar, setshowNavbar] = useState(true);
-
-  // useEffect(() => {
-  //   const onScroll = () => {
-  //     if (window.scrollY > scrollTop) {
-  //       setshowNavbar(false);
-  //     } else {
-  //       setshowNavbar(true);
-  //     }
-  //     setScrollTop(window.scrollY);
-  //   };
-
-  //   window.addEventListener("scroll", onScroll);
-
-  //   return () => {
-  //     window.removeEventListener("scroll", onScroll);
-  //   };
-  // }, [scrollTop]);
-
   // To count the number of products in the cart
-  const totalProductsInCart = useSelector(
+  const totalProductInCart = useSelector(
     (state) => state.products.totalproducts
   );
 
   return (
     <>
-      {/* <header
-        className={`${
-          showNavbar
-            ? "sticky top-0 translate-y-0 transition-transform duration-400 ease"
-            : "translate-y-[-100%]"
-        } shadow-lg bg-white z-50`}
-      > */}
       <header className="sticky top-0 right-0 left-0 shadow-lg bg-white z-50">
         <div className="h-16 sticky flex justify-between items-center px-4 py-4 font-medium md:px-8 lg:px-12">
           <div
@@ -95,9 +64,12 @@ function Navbar() {
 
             <div className="w-full header_icons flex gap-6 text-sm lg:gap-12">
               <div className="profile_icon">
-                <Link className="profile_cart_icon" onClick={handleProfileIcon}>
+                <div
+                  className="cursor-pointer profile_cart_icon"
+                  onClick={handleProfileIcon}
+                >
                   <i class="fa-regular fa-user fa-xl"></i>
-                </Link>
+                </div>
                 <div
                   className={`${
                     profileOpen ? "" : "hidden"
@@ -120,19 +92,19 @@ function Navbar() {
               </div>
 
               <div className="cart_icon">
-                <Link
-                  className="relative profile_cart_icon"
+                <div
+                  className="relative cursor-pointer profile_cart_icon"
                   onClick={handleCart}
                 >
                   <i class="fa-solid fa-cart-shopping fa-xl"></i>
-                  {totalProductsInCart < 1 ? (
+                  {totalProductInCart < 1 ? (
                     ""
                   ) : (
                     <span className="h-full absolute -top-4 -right-3">
-                      {totalProductsInCart}
+                      {totalProductInCart}
                     </span>
                   )}
-                </Link>
+                </div>
                 <div
                   className={`${
                     cartOpen ? "translate-y-[0%] " : "translate-y-[-150%]"
@@ -162,3 +134,46 @@ function Navbar() {
 }
 
 export default Navbar;
+
+{
+  /* ******** */
+}
+{
+  /* ******** */
+}
+{
+  /* ******** */
+}
+
+// For Navabr
+// const [scrollTop, setScrollTop] = useState(0);
+// const [showNavbar, setshowNavbar] = useState(true);
+
+// useEffect(() => {
+//   const onScroll = () => {
+//     if (window.scrollY > scrollTop) {
+//       setshowNavbar(false);
+//     } else {
+//       setshowNavbar(true);
+//     }
+//     setScrollTop(window.scrollY);
+//   };
+
+//   window.addEventListener("scroll", onScroll);
+
+//   return () => {
+//     window.removeEventListener("scroll", onScroll);
+//   };
+// }, [scrollTop]);
+
+{
+  /* **** */
+}
+// For header html
+// <header
+//         className={`${
+//           showNavbar
+//             ? "sticky top-0 translate-y-0 transition-transform duration-400 ease"
+//             : "translate-y-[-100%]"
+//         } shadow-lg bg-white z-50`}
+//       ></header>

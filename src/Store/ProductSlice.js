@@ -31,6 +31,7 @@ const ProductSlice = createSlice({
       } else {
         state.items.splice(existingItem, 1);
       }
+      state.totalproducts = state.items.length;
     },
   },
 });

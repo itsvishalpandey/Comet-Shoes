@@ -37,16 +37,16 @@ function Cart() {
             <div className="w-1/3">
               <div className="h-full flex flex-col items-end justify-between">
                 <h6>Rs. {items.price * items.quantity}</h6>
-                <div className="flex gap-4 p-1 border border-black">
+                <div className="flex items-center gap-4 border border-black">
                   <button
-                    className="px-2"
+                    className="px-3 py-1 bg-gray-200"
                     onClick={() => handleDecrement(items)}
                   >
                     -
                   </button>
                   <span>{items.quantity}</span>
                   <button
-                    className="px-2"
+                    className="px-3 py-1 bg-gray-200"
                     onClick={() => handleIncrement(items)}
                   >
                     +
