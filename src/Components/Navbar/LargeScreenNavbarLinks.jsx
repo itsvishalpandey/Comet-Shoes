@@ -19,8 +19,8 @@ function LargeScreenNavbarLinks() {
   return (
     <>
       <div className="header_links flex gap-16 whitespace-nowrap max-lg:hidden">
-        <Link
-          className="flex gap-2 items-center justify-center nav_link"
+        <div
+          className="flex gap-2 items-center justify-center cursor-pointer nav_link"
           onClick={() => handleNavLink("men")}
         >
           <div>
@@ -35,10 +35,10 @@ function LargeScreenNavbarLinks() {
           )}
 
           {/* Dropdown */}
-        </Link>
+        </div>
         <NavbarDropdownMen navLinkClicked={navLinkClicked.men} />
-        <Link
-          className="flex gap-2 items-center justify-center nav_link"
+        <div
+          className="flex gap-2 items-center justify-center cursor-pointer nav_link"
           onClick={() => handleNavLink("women")}
         >
           <div>
@@ -53,7 +53,7 @@ function LargeScreenNavbarLinks() {
 
           {/* Dropdown */}
           <NavbarDropdownWomen navLinkClicked={navLinkClicked.women} />
-        </Link>
+        </div>
         <Link to="/drops" className="nav_link">
           <span>Drops</span>
           <div className="navLink_active"></div>

@@ -36,7 +36,7 @@ function SingleProductCard({ images, id }) {
   const handleCardDetailsPage = () => {
     navigate("/single-product", {
       state: {
-        productDetails: { images, id },
+        productDetails: { images },
       },
     });
   };

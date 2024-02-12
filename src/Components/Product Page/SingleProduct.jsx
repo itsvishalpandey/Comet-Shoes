@@ -8,10 +8,7 @@ function SingleProduct() {
   const { productDetails } = location.state || {};
   return (
     <>
-      <SingleProductOverview
-        products={productDetails.images}
-        id={productDetails.id}
-      />
+      <SingleProductOverview products={productDetails.images} />
       <SingleProductDescription />
     </>
   );

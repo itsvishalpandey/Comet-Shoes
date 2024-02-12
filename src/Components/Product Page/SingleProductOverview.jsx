@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addProduct } from "../../Store/ProductSlice";
 
-function SingleProductOverview({ products, id }) {
+function SingleProductOverview({ products }) {
   const productImages = [
     {
       smallImage: "src/assets/blue-white_small.webp",
