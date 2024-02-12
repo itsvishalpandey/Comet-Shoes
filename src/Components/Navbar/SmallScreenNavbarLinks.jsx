@@ -26,7 +26,7 @@ function SmallScreenNavbarLinks({ menuOpen }) {
       <div
         className={`header_links ${
           menuOpen ? "translate-x-0" : "translate-x-[-150%]"
-        } flex flex-col absolute top-16 right-0 left-0 transition duration-300 delay-400 ease-in bg-blue-800 text-white lg:hidden`}
+        } max-h-screen overflow-y-auto flex flex-col absolute top-16 right-0 left-0 pb-16 transition duration-300 delay-400 ease-in bg-blue-800 text-white lg:hidden small_screen_navbar`}
       >
         <div className="h-full flex flex-col gap-8 items-start p-8 text-2xl border-b border-gray-300">
           <div className="w-full flex flex-col items-center justify-center gap-6">
@@ -56,7 +56,10 @@ function SmallScreenNavbarLinks({ menuOpen }) {
           <div className="flex flex-col gap-6">
             <Link className="smNavbarLinksHover">SNEAKERS</Link>
             <div className="flex flex-col gap-2 text-sm">
-              <Link className="flex gap-4 items-center smNavbarLinksHover">
+              <Link
+                to="/comet-men"
+                className="flex gap-4 items-center smNavbarLinksHover"
+              >
                 <img
                   src="src/assets/navbar-shoes-icon.webp"
                   className="h-2.5"
@@ -64,7 +67,10 @@ function SmallScreenNavbarLinks({ menuOpen }) {
                 />
                 COMET X
               </Link>
-              <Link className="flex gap-4 items-center smNavbarLinksHover">
+              <Link
+                to="/aeon-men"
+                className="flex gap-4 items-center smNavbarLinksHover"
+              >
                 <img
                   src="src/assets/navbar-shoes-icon.webp"
                   className="h-2.5"
@@ -73,13 +79,17 @@ function SmallScreenNavbarLinks({ menuOpen }) {
                 AEON
               </Link>
             </div>
-            <Link className="smNavbarLinksHover">DROPS</Link>
+            <Link to="/drops" className="smNavbarLinksHover">
+              DROPS
+            </Link>
             <Link className="smNavbarLinksHover">GIFTS</Link>
             <Link className="smNavbarLinksHover">GIFT CARD</Link>
           </div>
         </div>
         <div className="flex flex-col gap-4 p-8 text-sm border-b border-gray-300">
-          <Link className="smNavbarLinksHover">Our Story</Link>
+          <Link to="/our-story" className="smNavbarLinksHover">
+            Our Story
+          </Link>
           <Link className="smNavbarLinksHover">Become A Menber</Link>
           <Link className="smNavbarLinksHover">FAQ</Link>
           <Link className="smNavbarLinksHover">Returns And Exchanges</Link>

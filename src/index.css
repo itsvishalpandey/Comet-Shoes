@@ -44,6 +44,10 @@ html {
   display: flex;
 }
 
+.small_screen_navbar::-webkit-scrollbar {
+  display: none;
+}
+
 /* Comet Carousel */
 
 .comet_carousel_container {
