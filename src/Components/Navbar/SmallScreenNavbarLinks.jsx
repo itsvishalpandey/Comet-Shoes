@@ -79,10 +79,12 @@ function SmallScreenNavbarLinks({ menuOpen }) {
                 AEON
               </Link>
             </div>
+            <Link to="/slides" className="smNavbarLinksHover">
+              SLIDES
+            </Link>
             <Link to="/drops" className="smNavbarLinksHover">
               DROPS
             </Link>
-            <Link className="smNavbarLinksHover">GIFTS</Link>
             <Link className="smNavbarLinksHover">GIFT CARD</Link>
           </div>
         </div>

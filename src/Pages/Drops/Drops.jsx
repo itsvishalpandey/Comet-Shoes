@@ -1,15 +1,15 @@
 import React from "react";
-import GlobalButtonRed from "../../Components/GlobalButton/GlobalButtonRed";
+import GlobalButtonColor from "../../Components/GlobalButton/GlobalButtonColor";
 import CometCarousel from "../../Components/CometCarousel/CometCarousel";
 
 function Drops() {
   return (
     <>
-      <div className="text-white">
+      <div className="">
         <div className="w-full h-full">
           <div className="w-full h-[115vh]">
             <img
-              src="src/assets/hero_image_drops_large.webp"
+              src="src/assets/hero_image_drops_large.jpg"
               className="w-full h-full object-cover max-md:hidden"
               alt=""
             />
@@ -20,12 +20,18 @@ function Drops() {
             />
           </div>
         </div>
-        <div className="w-full h-full bg-black">
+        <div className="w-full h-full ">
           <div className="w-full flex flex-col gap-10 p-8 lg:flex-row md:p-12 lg:px-20 lg:gap-0">
             <div className="w-full lg:w-2/5">
               <img
                 src="src/assets/drop_image.webp"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover max-lg:hidden"
+                alt=""
+              />
+
+              <img
+                src="src/assets/drop_image_three.webp"
+                className="w-full h-[350px] object-contain lg:hidden"
                 alt=""
               />
             </div>
@@ -54,9 +60,10 @@ function Drops() {
                   </p>
                 </div>
                 <div className="max-lg:hidden">
-                  <GlobalButtonRed
+                  <GlobalButtonColor
                     globalButtonContent="Explore"
                     navigate="/drops"
+                    colors="green"
                   />
                 </div>
               </div>
@@ -64,7 +71,7 @@ function Drops() {
           </div>
         </div>
 
-        <div className="w-full h-full bg-black">
+        <div className="w-full h-full ">
           <div className="w-full flex flex-col gap-10 p-8 lg:flex-row md:p-12 lg:px-20 lg:gap-0">
             <div className="w-full lg:w-2/5">
               <div className="h-full w-full">
@@ -84,7 +91,8 @@ function Drops() {
                 />
               </div>
               <div className="flex items-center justify-center lg:hidden">
-                <GlobalButtonRed
+                <GlobalButtonColor
+                  colors={"green"}
                   globalButtonContent="Explore"
                   navigate="/drops"
                 />

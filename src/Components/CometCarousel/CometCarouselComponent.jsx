@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import GlobalButton from "../GlobalButton/GlobalButton";
 import SingleProductCard from "./SingleProductCard";
 
-function CometCarouselComponent({ cometCarouselImages }) {
+function CometCarouselComponent({ TotalShoesProducts }) {
   const carouselRef = useRef(null);
 
   const handleCarouselLeft = (e) => {
@@ -35,7 +35,7 @@ function CometCarouselComponent({ cometCarouselImages }) {
         ref={carouselRef}
         className="flex h-full w-full max-lg:flex-wrap lg:overflow-x-auto scroll-smooth comet_carousel_container"
       >
-        {cometCarouselImages.map((images) => (
+        {TotalShoesProducts.slice(0, 5).map((images) => (
           <SingleProductCard images={images} id={images.id} />
         ))}
 

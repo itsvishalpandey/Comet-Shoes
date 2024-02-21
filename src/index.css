@@ -100,6 +100,10 @@ html {
   cursor: grabbing;
 }
 
+.testimonial_carousel_card {
+  scroll-snap-align: center;
+}
+
 .testimonial_carousel_card .testimonial_card_image {
   -webkit-user-drag: none;
 }

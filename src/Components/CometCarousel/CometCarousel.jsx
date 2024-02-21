@@ -8,7 +8,7 @@ function CometCarousel() {
   return (
     <>
       <div className="w-full h-full lg:h-[75vh] select-none relative comet_carousel">
-        <CometCarouselComponent cometCarouselImages={TotalShoesProducts} />
+        <CometCarouselComponent TotalShoesProducts={TotalShoesProducts} />
       </div>
     </>
   );

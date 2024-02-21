@@ -91,7 +91,7 @@ function Navbar() {
                 </div>
               </div>
 
-              <div className="cart_icon">
+              <div className="flex flex-col cart_icon">
                 <div
                   className="relative cursor-pointer profile_cart_icon"
                   onClick={handleCart}
@@ -107,8 +107,8 @@ function Navbar() {
                 </div>
                 <div
                   className={`${
-                    cartOpen ? "translate-y-[0%] " : "translate-y-[-150%]"
-                  } h-screen flex flex-col gap-8 shadow-md p-8 bg-white black absolute top-0  right-0 w-[90%] lg:w-[35%] transition duration-300 delay-400 ease-in`}
+                    cartOpen ? "translate-x-[0%] " : "translate-x-[100%]"
+                  } w-[80%] h-screen flex flex-col gap-8 shadow-md p-8 bg-white black fixed top-0 right-0 md:w-[60%] lg:w-[35%] transition duration-300 delay-400 ease-in`}
                 >
                   <div className="flex justify-between items-center">
                     <div className="text-xl font-bold">
@@ -121,7 +121,7 @@ function Navbar() {
                     </div>
                   </div>
 
-                  {/* To display cart */}
+                  {/* To Display Cart */}
                   <Cart />
                 </div>
               </div>

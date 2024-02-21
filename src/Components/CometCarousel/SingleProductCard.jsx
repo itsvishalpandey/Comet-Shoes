@@ -88,7 +88,7 @@ function SingleProductCard({ images, id }) {
               {[4, 5, 6, 7, 8, 9, 10, 11, 12].map((size, index) => (
                 <div
                   key={index}
-                  className={`p-1.5 border hover:border-black cursor-pointer ${
+                  className={`px-1.5 py-1 border border-gray-300 hover:border-black cursor-pointer rounded-md ${
                     sizeActive === size ? "bg-gray-300" : ""
                   }`}
                   onClick={() => handleQuickAddSize(size)}

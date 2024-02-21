@@ -1,11 +1,10 @@
 import React from "react";
 import HeroSectionComponent from "./HeroSectionComponent";
-import { useSelector } from "react-redux";
 
 function HeroSectionOne() {
   const introAeon = {
-    imageLarge: "src/assets/hero_aeon.webp",
-    imageSmall: "src/assets/hero_aeon_mobile.webp",
+    imageLarge: "src/assets/homepage_banner_large.jpg",
+    imageSmall: "src/assets/homepage_banner_small.webp",
     header: "INTRODUCING AEON",
     text: "ALL DAY, EVERYDAY",
     buttons: [
