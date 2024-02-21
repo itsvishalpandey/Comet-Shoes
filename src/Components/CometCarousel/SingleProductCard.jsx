@@ -72,9 +72,9 @@ function SingleProductCard({ images, id }) {
             <div className="flex justify-end">
               <button
                 onClick={(e) => handleQuickAdd(e)}
-                className="bg-[#d9d8d8] px-2 py-1 rounded-full"
+                className="bg-[#d9d8d8] px-2 py-0.5 rounded-full"
               >
-                <i class="fa-solid fa-x"></i>
+                <i class="fa-solid fa-x fa-sm"></i>
               </button>
             </div>
             <div className="flex items-center justify-center gap-2 text-sm">

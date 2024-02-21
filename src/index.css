@@ -107,3 +107,9 @@ html {
 .testimonial_carousel_card .testimonial_card_image {
   -webkit-user-drag: none;
 }
+
+/* Cart */
+
+.cart_itemList::-webkit-scrollbar {
+  display: none;
+}

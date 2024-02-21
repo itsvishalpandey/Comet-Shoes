@@ -1,5 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+const calculateTotalPrice = (items) => {
+  return items.reduce((total, item) => total + item.price * item.quantity, 0);
+};
+
 const ProductSlice = createSlice({
   name: "product",
   initialState: {
@@ -21,6 +25,7 @@ const ProductSlice = createSlice({
       }
 
       state.totalproducts = state.items.length;
+      state.totalprice = calculateTotalPrice(state.items);
     },
     removeProduct: (state, action) => {
       const { id } = action.payload;
@@ -31,7 +36,9 @@ const ProductSlice = createSlice({
       } else {
         state.items.splice(existingItem, 1);
       }
+
       state.totalproducts = state.items.length;
+      state.totalprice = calculateTotalPrice(state.items);
     },
   },
 });
