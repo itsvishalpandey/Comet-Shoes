@@ -45,7 +45,7 @@ function WomensCollection() {
             </div>
             <FilterSidebar />
           </div>
-          <div className="h-full w-full flex flex-co flex-wrap">
+          <div className="h-full w-full flex flex-wrap">
             {showProducts.map((images, index) => (
               <SingleProductCard images={images} index={index} />
             ))}

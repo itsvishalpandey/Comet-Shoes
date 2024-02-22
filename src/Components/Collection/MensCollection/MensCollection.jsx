@@ -1,3 +1,4 @@
+// MensCollection.jsx
 import React, { useState } from "react";
 import SingleProductCard from "../../CometCarousel/SingleProductCard";
 import { TotalShoes } from "../../TotalShoesProducts/TotalShoesDetails";
@@ -12,11 +13,6 @@ function MensCollection() {
   ];
 
   const [selectedCategory, setSelectedCategory] = useState("view all");
-  const [selectedFilters, setSelectedFilters] = useState({});
-
-  const applyFilters = (filters) => {
-    setSelectedFilters(filters);
-  };
 
   const showProducts =
     selectedCategory === "view all"
@@ -24,16 +20,6 @@ function MensCollection() {
       : TotalShoesProducts.filter(
           (images) => images.category === selectedCategory
         );
-
-  const filteredProducts = showProducts.filter((product) => {
-    return (
-      (!selectedFilters.size || selectedFilters.size === product.size) &&
-      (!selectedFilters.category ||
-        selectedFilters.category === product.category) &&
-      (!selectedFilters.availability ||
-        selectedFilters.availability === product.availability)
-    );
-  });
 
   return (
     <>
@@ -59,11 +45,20 @@ function MensCollection() {
                 </div>
               ))}
             </div>
-            <FilterSidebar applyFilters={applyFilters} />
+            <FilterSidebar />
           </div>
-          <div className="h-full w-full flex flex-co flex-wrap">
-            {filteredProducts.map((images, index) => (
-              <SingleProductCard key={index} images={images} index={index} />
+
+          <div className="flex flex-wrap gap-4 text-sm font-medium uppercase px-4 md:flex-row md:text-md lg:px-12">
+            <div className="flex flex-wrap gap-4 whitespace-nowrap">
+              <span className="border border-black px-4 py-1 rounded-full">
+                size: size
+              </span>
+            </div>
+          </div>
+
+          <div className="h-full w-full flex flex-wrap">
+            {showProducts.map((images, index) => (
+              <SingleProductCard key={index} images={images} id={images.id} />
             ))}
           </div>
         </div>

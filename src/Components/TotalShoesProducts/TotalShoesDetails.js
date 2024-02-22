@@ -11,7 +11,7 @@ export const TotalShoes = [
       { img: "src/assets/shoes-one-four.webp" },
     ],
     price: 4299,
-    size: [4, 5, 6, 7, 8, 9, 10, 11, 12],
+    size: [6, 7, 8, 9, 10, 11, 12],
     availability: "out of stock",
   },
   {
@@ -26,7 +26,7 @@ export const TotalShoes = [
       { img: "src/assets/shoes-two-four.webp" },
     ],
     price: 4499,
-    size: [4, 5, 6, 7, 8, 9, 10, 11, 12],
+    size: [4, 5, 6, 7, 8, 9, 10, 11],
     availability: "in stock",
   },
   {
@@ -74,7 +74,7 @@ export const TotalShoes = [
       { img: "src/assets/shoes-five-four.jpg" },
     ],
     price: 4299,
-    size: [4, 5, 6, 7, 8, 9, 10, 11, 12],
+    size: [4, 5, 6, 7, 8, 9, 10],
     availability: "in stock",
   },
   {
@@ -90,7 +90,7 @@ export const TotalShoes = [
       { img: "src/assets/shoes-six-four.jpg" },
     ],
     price: 4199,
-    size: [4, 5, 6, 7, 8, 9, 10, 11, 12],
+    size: [4, 5, 6, 7, 8, 9, 10],
     availability: "in stock",
   },
   {
@@ -135,7 +135,7 @@ export const TotalShoes = [
       { img: "src/assets/shoes-nine-four.png" },
     ],
     price: 4199,
-    size: [4, 5, 6, 7, 8, 9, 10, 11, 12],
+    size: [7, 8, 9, 10, 11, 12],
     availability: "out of stock",
   },
   {
@@ -150,8 +150,8 @@ export const TotalShoes = [
       { img: "src/assets/shoes-ten-four.jpg" },
     ],
     price: 4299,
-    size: [4, 5, 6, 7, 8, 9, 10, 11, 12],
-    availability: "in stock",
+    size: [8, 9, 10, 11, 12],
+    availability: "out of stock",
   },
   {
     id: 11,
@@ -165,7 +165,7 @@ export const TotalShoes = [
       { img: "src/assets/slides-one-four.jpg" },
     ],
     price: 4299,
-    size: [4, 5, 6, 7, 8, 9, 10, 11, 12],
+    size: [10, 11, 12],
     availability: "in stock",
   },
   {
@@ -180,7 +180,7 @@ export const TotalShoes = [
       { img: "src/assets/slides-two-four.jpg" },
     ],
     price: 4299,
-    size: [4, 5, 6, 7, 8, 9, 10, 11, 12],
+    size: [8, 9, 10, 11, 12],
     availability: "in stock",
   },
   {
@@ -225,7 +225,7 @@ export const TotalShoes = [
       { img: "src/assets/slides-five-four.jpg" },
     ],
     price: 4299,
-    size: [4, 5, 6, 7, 8, 9, 10, 11, 12],
+    size: [6, 7, 8, 9, 10, 11],
     availability: "in stock",
   },
 ];

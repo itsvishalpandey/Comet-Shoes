@@ -1,15 +1,14 @@
+// FilterSidebar.jsx
 import React, { useState } from "react";
-import FilterSize from "./FilterSidebarContent";
 import GlobalButton from "../../GlobalButton/GlobalButton";
+import FilterSize from "./FilterSidebarContent";
 import { TotalShoes } from "../../TotalShoesProducts/TotalShoesDetails";
 
-function FilterSidebar({ applyFilters }) {
-  const totalProductCount = TotalShoes;
-
+function FilterSidebar() {
   const filterOptions = [
     {
       id: 1,
-      type: "size (uk)",
+      type: "size",
       options: [4, 5, 6, 7, 8, 9, 10, 11, 12],
     },
     {
@@ -25,23 +24,7 @@ function FilterSidebar({ applyFilters }) {
   ];
 
   const [isMainOpen, setIsMainOpen] = useState(false);
-  const handleFilterIcon = () => {
-    setIsMainOpen(!isMainOpen);
-  };
-
   const [eachFilterContent, setEachFilterContent] = useState(null);
-  const handleEachFilter = (name) => {
-    setEachFilterContent((prev) => (prev === name ? null : name));
-  };
-
-  const [storeFilters, setStoreFilters] = useState({});
-
-  const handleApplyFilters = () => {
-    console.log("Selected Filters:", storeFilters);
-    setIsMainOpen(!isMainOpen);
-    setEachFilterContent(!eachFilterContent);
-    applyFilters(storeFilters);
-  };
 
   const handleMainCancel = (e) => {
     e.stopPropagation();
@@ -53,7 +36,7 @@ function FilterSidebar({ applyFilters }) {
     <>
       <section className="">
         <div
-          onClick={handleFilterIcon}
+          onClick={() => setIsMainOpen(!isMainOpen)}
           className="flex items-center gap-3 text-gray-500 smNavbarLinksHover"
         >
           <i className="fa-solid fa-sliders fa-lg"></i>
@@ -68,7 +51,7 @@ function FilterSidebar({ applyFilters }) {
             <div className="w-full flex flex-col items-center justify-center">
               <h1 className="text-xl font-bold">FILTER</h1>
               <p className="text-sm pt-1 text-gray-500">
-                {totalProductCount.length} Products
+                {TotalShoes.length} Products
               </p>
             </div>
             <div className="text-end cursor-pointer">
@@ -83,9 +66,9 @@ function FilterSidebar({ applyFilters }) {
           <div className="h-full flex flex-col gap-4 text-gray-700 uppercase relative">
             <div className="h-full flex flex-col gap-3 flex-between">
               {filterOptions.map((filter) => (
-                <React.Fragment key={filter.id}>
+                <>
                   <div
-                    onClick={() => handleEachFilter(filter.type)}
+                    onClick={() => setEachFilterContent(filter.type)}
                     className="w-full flex items-center justify-between smNavbarLinksHover cursor-pointer"
                   >
                     <h1 className="">{filter.type}</h1>
@@ -94,23 +77,16 @@ function FilterSidebar({ applyFilters }) {
                   <FilterSize
                     filter={filter}
                     eachFilterContent={eachFilterContent}
-                    handleEachFilter={handleEachFilter}
-                    handleApplyFilters={handleApplyFilters}
-                    setStoreFilters={setStoreFilters}
+                    handleEachFilter={setEachFilterContent}
                   />
-                </React.Fragment>
+                </>
               ))}
             </div>
             <div className="w-full flex gap-2 justify-center items-center uppercase">
-              <button
-                className="px-8 py-2.5 text-[12px] font-medium md:text-lg lg:px-4 lg:py-3 whitespace-nowrap underline underline-red-200 uppercase"
-                onClick={() => setStoreFilters({})}
-              >
+              <button className="px-8 py-2.5 text-[12px] font-medium md:text-lg lg:px-4 lg:py-3 whitespace-nowrap underline underline-red-200 uppercase">
                 remove all
               </button>
-              <div onClick={handleApplyFilters}>
-                <GlobalButton globalButtonContent="apply" />
-              </div>
+              <GlobalButton globalButtonContent="apply" />
             </div>
           </div>
         </div>
