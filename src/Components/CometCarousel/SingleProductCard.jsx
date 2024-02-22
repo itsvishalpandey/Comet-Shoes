@@ -85,7 +85,7 @@ function SingleProductCard({ images, id }) {
             </div>
 
             <div className="flex flex-wrap gap-3 font-medium py-2">
-              {[4, 5, 6, 7, 8, 9, 10, 11, 12].map((size, index) => (
+              {images.size.map((size, index) => (
                 <div
                   key={index}
                   className={`px-1.5 py-1 border border-gray-300 hover:border-black cursor-pointer rounded-md ${

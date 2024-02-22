@@ -58,6 +58,8 @@ function SingleProductOverview({ products }) {
     alert("Item added");
   };
 
+  console.log(products);
+
   return (
     <>
       <div className="product_page bg-white text-black">
@@ -133,10 +135,10 @@ function SingleProductOverview({ products }) {
                   <div className="h-[1px] w-full bg-gray-400"></div>
 
                   <div className="flex flex-wrap gap-6 font-medium lg:py-4">
-                    {[4, 5, 6, 7, 8, 9, 10, 11, 12].map((size, index) => (
+                    {products.size.map((size, index) => (
                       <div
                         key={index}
-                        className={`px-3 py-1 border hover:border-black cursor-pointer ${
+                        className={`px-3 py-1 border border-gray-300 hover:border-black rounded-md cursor-pointer ${
                           sizeActive === size ? "bg-gray-300" : ""
                         }`}
                         onClick={() => handleSize(size)}

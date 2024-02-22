@@ -6,12 +6,17 @@ import FilterSidebar from "./FilterSidebar";
 function MensCollection() {
   const TotalShoesProducts = TotalShoes;
 
-  const uniqueCatogeries = [
+  const uniqueCategories = [
     "view all",
     ...new Set(TotalShoesProducts.map((images) => images.category)),
   ];
 
-  const [selectedCategory, setSelecedCategory] = useState("view all");
+  const [selectedCategory, setSelectedCategory] = useState("view all");
+  const [selectedFilters, setSelectedFilters] = useState({});
+
+  const applyFilters = (filters) => {
+    setSelectedFilters(filters);
+  };
 
   const showProducts =
     selectedCategory === "view all"
@@ -19,6 +24,16 @@ function MensCollection() {
       : TotalShoesProducts.filter(
           (images) => images.category === selectedCategory
         );
+
+  const filteredProducts = showProducts.filter((product) => {
+    return (
+      (!selectedFilters.size || selectedFilters.size === product.size) &&
+      (!selectedFilters.category ||
+        selectedFilters.category === product.category) &&
+      (!selectedFilters.availability ||
+        selectedFilters.availability === product.availability)
+    );
+  });
 
   return (
     <>
@@ -30,24 +45,25 @@ function MensCollection() {
         <div className="flex flex-col gap-8">
           <div className="flex flex-col justify-between items-start gap-4 px-4 md:flex-row lg:px-12">
             <div className="flex gap-8 items-center">
-              {uniqueCatogeries.map((category) => (
+              {uniqueCategories.map((category) => (
                 <div
+                  key={category}
                   className={`${
                     selectedCategory === category
                       ? "text-black"
                       : "text-gray-500"
                   } cursor-pointer font-medium uppercase`}
-                  onClick={() => setSelecedCategory(category)}
+                  onClick={() => setSelectedCategory(category)}
                 >
                   {category}
                 </div>
               ))}
             </div>
-            <FilterSidebar />
+            <FilterSidebar applyFilters={applyFilters} />
           </div>
           <div className="h-full w-full flex flex-co flex-wrap">
-            {showProducts.map((images, index) => (
-              <SingleProductCard images={images} index={index} />
+            {filteredProducts.map((images, index) => (
+              <SingleProductCard key={index} images={images} index={index} />
             ))}
           </div>
         </div>

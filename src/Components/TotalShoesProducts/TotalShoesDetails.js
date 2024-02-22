@@ -11,6 +11,8 @@ export const TotalShoes = [
       { img: "src/assets/shoes-one-four.webp" },
     ],
     price: 4299,
+    size: [4, 5, 6, 7, 8, 9, 10, 11, 12],
+    availability: "out of stock",
   },
   {
     id: 2,
@@ -24,6 +26,8 @@ export const TotalShoes = [
       { img: "src/assets/shoes-two-four.webp" },
     ],
     price: 4499,
+    size: [4, 5, 6, 7, 8, 9, 10, 11, 12],
+    availability: "in stock",
   },
   {
     id: 3,
@@ -38,6 +42,8 @@ export const TotalShoes = [
       { img: "src/assets/shoes-three-four.png" },
     ],
     price: 4299,
+    size: [4, 5, 6, 7, 8, 9, 10, 11, 12],
+    availability: "out of stock",
   },
   {
     id: 4,
@@ -52,6 +58,8 @@ export const TotalShoes = [
       { img: "src/assets/shoes-four-four.jpg" },
     ],
     price: 4199,
+    size: [4, 5, 6, 7, 8, 9, 10, 11, 12],
+    availability: "out of stock",
   },
   {
     id: 5,
@@ -66,6 +74,8 @@ export const TotalShoes = [
       { img: "src/assets/shoes-five-four.jpg" },
     ],
     price: 4299,
+    size: [4, 5, 6, 7, 8, 9, 10, 11, 12],
+    availability: "in stock",
   },
   {
     id: 6,
@@ -80,6 +90,8 @@ export const TotalShoes = [
       { img: "src/assets/shoes-six-four.jpg" },
     ],
     price: 4199,
+    size: [4, 5, 6, 7, 8, 9, 10, 11, 12],
+    availability: "in stock",
   },
   {
     id: 7,
@@ -93,6 +105,8 @@ export const TotalShoes = [
       { img: "src/assets/shoes-seven-four.png" },
     ],
     price: 4199,
+    size: [4, 5, 6, 7, 8, 9, 10, 11, 12],
+    availability: "in stock",
   },
   {
     id: 8,
@@ -106,6 +120,8 @@ export const TotalShoes = [
       { img: "src/assets/shoes-eight-four.jpg" },
     ],
     price: 4999,
+    size: [4, 5, 6, 7, 8, 9, 10, 11, 12],
+    availability: "in stock",
   },
   {
     id: 9,
@@ -119,6 +135,8 @@ export const TotalShoes = [
       { img: "src/assets/shoes-nine-four.png" },
     ],
     price: 4199,
+    size: [4, 5, 6, 7, 8, 9, 10, 11, 12],
+    availability: "out of stock",
   },
   {
     id: 10,
@@ -132,6 +150,8 @@ export const TotalShoes = [
       { img: "src/assets/shoes-ten-four.jpg" },
     ],
     price: 4299,
+    size: [4, 5, 6, 7, 8, 9, 10, 11, 12],
+    availability: "in stock",
   },
   {
     id: 11,
@@ -145,6 +165,8 @@ export const TotalShoes = [
       { img: "src/assets/slides-one-four.jpg" },
     ],
     price: 4299,
+    size: [4, 5, 6, 7, 8, 9, 10, 11, 12],
+    availability: "in stock",
   },
   {
     id: 12,
@@ -158,6 +180,8 @@ export const TotalShoes = [
       { img: "src/assets/slides-two-four.jpg" },
     ],
     price: 4299,
+    size: [4, 5, 6, 7, 8, 9, 10, 11, 12],
+    availability: "in stock",
   },
   {
     id: 13,
@@ -171,6 +195,8 @@ export const TotalShoes = [
       { img: "src/assets/slides-three-four.jpg" },
     ],
     price: 4299,
+    size: [4, 5, 6, 7, 8, 9, 10, 11, 12],
+    availability: "out of stock",
   },
   {
     id: 14,
@@ -184,6 +210,8 @@ export const TotalShoes = [
       { img: "src/assets/slides-four-four.jpg" },
     ],
     price: 4299,
+    size: [4, 5, 6, 7, 8, 9, 10, 11, 12],
+    availability: "in stock",
   },
   {
     id: 15,
@@ -197,5 +225,7 @@ export const TotalShoes = [
       { img: "src/assets/slides-five-four.jpg" },
     ],
     price: 4299,
+    size: [4, 5, 6, 7, 8, 9, 10, 11, 12],
+    availability: "in stock",
   },
 ];

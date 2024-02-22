@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { TotalShoes } from "../../TotalShoesProducts/TotalShoesDetails";
-import GlobalButton from "../../GlobalButton/GlobalButton";
 import FilterSize from "./FilterSidebarContent";
+import GlobalButton from "../../GlobalButton/GlobalButton";
+import { TotalShoes } from "../../TotalShoesProducts/TotalShoesDetails";
 
-function FilterSidebar() {
+function FilterSidebar({ applyFilters }) {
   const totalProductCount = TotalShoes;
 
   const filterOptions = [
@@ -14,7 +14,7 @@ function FilterSidebar() {
     },
     {
       id: 2,
-      type: "type",
+      type: "category",
       options: ["aeon", "comet x", "slides", "drops"],
     },
     {
@@ -34,6 +34,15 @@ function FilterSidebar() {
     setEachFilterContent((prev) => (prev === name ? null : name));
   };
 
+  const [storeFilters, setStoreFilters] = useState({});
+
+  const handleApplyFilters = () => {
+    console.log("Selected Filters:", storeFilters);
+    setIsMainOpen(!isMainOpen);
+    setEachFilterContent(!eachFilterContent);
+    applyFilters(storeFilters);
+  };
+
   const handleMainCancel = (e) => {
     e.stopPropagation();
     setIsMainOpen(!isMainOpen);
@@ -47,7 +56,7 @@ function FilterSidebar() {
           onClick={handleFilterIcon}
           className="flex items-center gap-3 text-gray-500 smNavbarLinksHover"
         >
-          <i class="fa-solid fa-sliders fa-lg"></i>
+          <i className="fa-solid fa-sliders fa-lg"></i>
           <button className="text-lg">Filter</button>
         </div>
         <div
@@ -64,7 +73,7 @@ function FilterSidebar() {
             </div>
             <div className="text-end cursor-pointer">
               <i
-                class="fa-solid fa-x fa-lg"
+                className="fa-solid fa-x fa-lg"
                 onClick={(e) => handleMainCancel(e)}
               ></i>
             </div>
@@ -74,7 +83,7 @@ function FilterSidebar() {
           <div className="h-full flex flex-col gap-4 text-gray-700 uppercase relative">
             <div className="h-full flex flex-col gap-3 flex-between">
               {filterOptions.map((filter) => (
-                <>
+                <React.Fragment key={filter.id}>
                   <div
                     onClick={() => handleEachFilter(filter.type)}
                     className="w-full flex items-center justify-between smNavbarLinksHover cursor-pointer"
@@ -86,15 +95,22 @@ function FilterSidebar() {
                     filter={filter}
                     eachFilterContent={eachFilterContent}
                     handleEachFilter={handleEachFilter}
+                    handleApplyFilters={handleApplyFilters}
+                    setStoreFilters={setStoreFilters}
                   />
-                </>
+                </React.Fragment>
               ))}
             </div>
             <div className="w-full flex gap-2 justify-center items-center uppercase">
-              <button className="px-8 py-2.5 text-[12px] font-medium md:text-lg lg:px-4 lg:py-3 whitespace-nowrap underline underline-red-200 uppercase">
+              <button
+                className="px-8 py-2.5 text-[12px] font-medium md:text-lg lg:px-4 lg:py-3 whitespace-nowrap underline underline-red-200 uppercase"
+                onClick={() => setStoreFilters({})}
+              >
                 remove all
               </button>
-              <GlobalButton globalButtonContent="apply" />
+              <div onClick={handleApplyFilters}>
+                <GlobalButton globalButtonContent="apply" />
+              </div>
             </div>
           </div>
         </div>

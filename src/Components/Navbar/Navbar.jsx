@@ -107,7 +107,7 @@ function Navbar() {
                 </div>
                 <div
                   className={`${
-                    cartOpen ? "translate-x-[0%] " : "translate-x-[0%]"
+                    cartOpen ? "translate-x-[0%] " : "translate-x-[100%]"
                   } w-[80%] h-[100vh] flex flex-col gap-8 shadow-md p-8 bg-white black fixed top-0 right-0 md:w-[60%] lg:w-[35%] transition duration-300 delay-400 ease-in`}
                 >
                   <div className="flex justify-between items-center">
