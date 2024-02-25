@@ -50,7 +50,7 @@ function SingleProductCard({ images, id }) {
         <div onClick={handleCardDetailsPage} className="h-full w-full">
           <img
             src={images.image}
-            className="w-full h-full object-fill carousel_image"
+            className="w-full h-full object-fill lg:object-cover carousel_image"
             alt=""
           />
         </div>

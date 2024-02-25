@@ -4,7 +4,7 @@ import GlobalButton from "../../GlobalButton/GlobalButton";
 import FilterSize from "./FilterSidebarContent";
 import { TotalShoes } from "../../TotalShoesProducts/TotalShoesDetails";
 
-function FilterSidebar() {
+function FilterSidebar({ applyFilters }) {
   const filterOptions = [
     {
       id: 1,
@@ -23,20 +23,29 @@ function FilterSidebar() {
     },
   ];
 
-  const [isMainOpen, setIsMainOpen] = useState(false);
-  const [eachFilterContent, setEachFilterContent] = useState(null);
+  const [handleFilters, setHandleFilters] = useState(false);
+  const [handleEachFilterContent, setHandEachFilterContent] = useState(null);
+  const [storeFilters, setStoreFilters] = useState({
+    size: [],
+    category: [],
+    availability: [],
+  });
+
+  const handleApplyFilters = () => {
+    applyFilters(storeFilters);
+  };
 
   const handleMainCancel = (e) => {
     e.stopPropagation();
-    setIsMainOpen(!isMainOpen);
-    setEachFilterContent(!eachFilterContent);
+    setHandleFilters(!handleFilters);
+    setHandEachFilterContent(!handleEachFilterContent);
   };
 
   return (
     <>
       <section className="">
         <div
-          onClick={() => setIsMainOpen(!isMainOpen)}
+          onClick={() => setHandleFilters(!handleFilters)}
           className="flex items-center gap-3 text-gray-500 smNavbarLinksHover"
         >
           <i className="fa-solid fa-sliders fa-lg"></i>
@@ -44,7 +53,7 @@ function FilterSidebar() {
         </div>
         <div
           className={`${
-            isMainOpen ? "translate-x-[0%] " : "translate-x-[100%]"
+            handleFilters ? "translate-x-[0%] " : "translate-x-[100%]"
           } h-screen flex flex-col gap-4 p-8 bg-white black fixed top-0 right-0 w-[75%] sm:w-[50%] md:w-[40%] lg:w-[25%] transition duration-300 delay-400 ease-in z-50`}
         >
           <div className="flex justify-between items-center">
@@ -68,7 +77,7 @@ function FilterSidebar() {
               {filterOptions.map((filter) => (
                 <>
                   <div
-                    onClick={() => setEachFilterContent(filter.type)}
+                    onClick={() => setHandEachFilterContent(filter.type)}
                     className="w-full flex items-center justify-between smNavbarLinksHover cursor-pointer"
                   >
                     <h1 className="">{filter.type}</h1>
@@ -76,17 +85,33 @@ function FilterSidebar() {
                   </div>
                   <FilterSize
                     filter={filter}
-                    eachFilterContent={eachFilterContent}
-                    handleEachFilter={setEachFilterContent}
+                    handleEachFilterContent={handleEachFilterContent}
+                    handleEachFilter={setHandEachFilterContent}
+                    handleApplyFilters={handleApplyFilters}
+                    storeFilters={storeFilters}
+                    setStoreFilters={setStoreFilters}
                   />
                 </>
               ))}
             </div>
             <div className="w-full flex gap-2 justify-center items-center uppercase">
-              <button className="px-8 py-2.5 text-[12px] font-medium md:text-lg lg:px-4 lg:py-3 whitespace-nowrap underline underline-red-200 uppercase">
+              <button
+                className="px-8 py-2.5 text-[12px] font-medium md:text-lg lg:px-4 lg:py-3 whitespace-nowrap underline underline-red-200 uppercase"
+                onClick={() =>
+                  setStoreFilters({ size: [], category: [], availability: [] })
+                }
+              >
                 remove all
               </button>
-              <GlobalButton globalButtonContent="apply" />
+
+              <div
+                onClick={() => {
+                  handleApplyFilters();
+                  setHandleFilters(!handleFilters);
+                }}
+              >
+                <GlobalButton globalButtonContent="apply" />
+              </div>
             </div>
           </div>
         </div>
